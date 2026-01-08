@@ -70,7 +70,7 @@ jobs:
     needs: plan
     environment: ${{ github.event.inputs.environment || 'prod' }}
     steps:
-      - run: echo "✅ Manual approval required in the Actions UI."
+      - run: echo "✅ Manual approval required in the Actions UI"
 
   deploy:
     name: Terraform Deploy
