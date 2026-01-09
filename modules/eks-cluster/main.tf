@@ -11,11 +11,11 @@ data "aws_eks_cluster_auth" "this" {
 }
 
 provider "kubernetes" {
-  host                   = data.aws_eks_cluster.this.endpoint
+  host = data.aws_eks_cluster.this.endpoint
   cluster_ca_certificate = base64decode(
     data.aws_eks_cluster.this.certificate_authority[0].data
   )
-  token                  = data.aws_eks_cluster_auth.this.token
+  token = data.aws_eks_cluster_auth.this.token
 }
 
 
@@ -111,7 +111,7 @@ module "eks" {
       principal_arn     = "arn:aws:iam::999568710647:user/nfusi"
       policy_associations = [
         {
-          policy_arn  = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          policy_arn   = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
           access_scope = { type = "cluster" }
         }
       ]
@@ -122,7 +122,7 @@ module "eks" {
       principal_arn     = "arn:aws:iam::999568710647:role/github-runner-ssm-role"
       policy_associations = [
         {
-          policy_arn  = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          policy_arn   = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
           access_scope = { type = "cluster" }
         }
       ]
