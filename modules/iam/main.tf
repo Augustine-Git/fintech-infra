@@ -123,7 +123,7 @@ resource "aws_iam_role_policy_attachment" "attach_eks" {
 }
 
 ########################################
-# ✅ Amazon EKS CNI Add-on IAM Role (IRSA)
+# ✅ Amazon EKS CNI Add-on IAM Role IRSA
 ########################################
 
 resource "aws_iam_role" "cni_role" {
