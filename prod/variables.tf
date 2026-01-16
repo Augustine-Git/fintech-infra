@@ -46,7 +46,7 @@ variable "tags" {
 variable "cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
-  default     = "prod-dominion-cluster"
+  default     = "prod-dominion-cluster1"
 }
 
 variable "rolearn" {
