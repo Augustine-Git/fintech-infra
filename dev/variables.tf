@@ -79,7 +79,7 @@ variable "key_name" {
 }
 
 ################################################################################
-# Certificate Manager (ACM) & Route 53
+# Certificate Manager ACM & Route 53
 ################################################################################
 
 variable "domain_name" {
