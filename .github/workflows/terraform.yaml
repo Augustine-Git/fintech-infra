@@ -23,8 +23,8 @@ on:
         default: "us-east-2"
       action:
         description: "Terraform action: apply (default) or destroy"
-        required: true
-        default: "destroy"
+        required: false
+        default: "apply"
 
 concurrency:
   group: terraform-${{ github.ref }}
@@ -101,4 +101,4 @@ jobs:
       - name: Terraform Destroy
         if: ${{ github.event.inputs.action == 'destroy' }}
         working-directory: ${{ env.TF_DIR }}
-        run: terraform destroy -auto-approve -lock=false
+        run: terraform destroy -auto-approve -lock=true
